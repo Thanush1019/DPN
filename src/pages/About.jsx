@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { orgs } from '../orgs-data'
 
-const heroImg = '/Life – Dhanraj Nathwani/imgi_2_dhanraj-img.png'
-const introImg = '/Life – Dhanraj Nathwani/imgi_24_dhanraj-img-203x300.png'
+const heroImg = '/Gallery – Dhanraj Nathwani/imgi_7_WhatsApp-Image-2019-01-16-at-11.50.59-PM-1-600x380.jpg'
+const introImg = '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_3_about-img.jpg'
 const interests = [
   {
     id: 'sports',

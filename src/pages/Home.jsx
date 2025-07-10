@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Facebook, Twitter, Linkedin, X } from 'lucide-re
 import { Link } from 'react-router-dom'
 
 const heroBg = '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_3_about-img.jpg'
-const profileImg = '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_3_about-img.jpg'
+const profileImg = '/Life – Dhanraj Nathwani/imgi_2_dhanraj-img.png'
 const logo = '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_16_footer-logo.png'
 const blogImg = '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_9_DPN-BLOG-IMAGE-400x220.png'
 const galleryImgs = [
@@ -42,97 +42,154 @@ function Home() {
 	return (
 		<div className={`min-h-screen w-full ${typeof window !== 'undefined' && document.documentElement.classList.contains('dark') ? 'bg-slate-900' : 'bg-gray-50'}`}>
 			{/* Hero Section */}
-			<section className="relative min-h-[80vh] flex flex-col md:flex-row items-center justify-center overflow-hidden px-4 pt-28 pb-12 bg-gradient-to-br from-blue-100 via-blue-200 to-white dark:from-slate-900 dark:via-black dark:to-blue-900">
-				{/* Animated background accent */}
+			<section className='relative min-h-[90vh] flex flex-col md:flex-row items-center justify-center overflow-hidden px-4 pt-28 pb-12 bg-gradient-to-br from-blue-100 via-blue-200 to-white dark:from-slate-900 dark:via-black dark:to-blue-900'>
+				{/* Animated SVG/Blob Backgrounds */}
 				<motion.div
-					className="absolute inset-0 z-0 flex items-center justify-center"
+					className='absolute inset-0 z-0 pointer-events-none'
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 1 }}
 				>
-					<div className="w-[700px] h-[700px] md:w-[900px] md:h-[900px] rounded-full bg-gradient-to-br from-blue-800/30 via-purple-700/30 to-black/60 blur-3xl opacity-80 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse" />
+					<svg className='absolute -top-32 -left-32 w-96 h-96 opacity-40 animate-float-slow' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>
+						<defs>
+							<radialGradient id='grad1' cx='50%' cy='50%' r='50%'>
+								<stop offset='0%' stopColor='#60a5fa' stopOpacity='0.7' />
+								<stop offset='100%' stopColor='#7c3aed' stopOpacity='0.3' />
+							</radialGradient>
+						</defs>
+						<circle cx='100' cy='100' r='100' fill='url(#grad1)' />
+					</svg>
+					<svg className='absolute bottom-0 right-0 w-80 h-80 opacity-30 animate-float-slower' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>
+						<defs>
+							<radialGradient id='grad2' cx='50%' cy='50%' r='50%'>
+								<stop offset='0%' stopColor='#a5b4fc' stopOpacity='0.6' />
+								<stop offset='100%' stopColor='#6366f1' stopOpacity='0.2' />
+							</radialGradient>
+						</defs>
+						<ellipse cx='100' cy='100' rx='100' ry='80' fill='url(#grad2)' />
+					</svg>
 				</motion.div>
 
-				{/* Centered Content */}
-				<div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full max-w-7xl mx-auto gap-12">
-					{/* Left: Headline and CTAs */}
-					<div className="flex-1 flex flex-col items-center md:items-start justify-center text-center md:text-left">
+				{/* Main Content Container: Asymmetrical, responsive layout */}
+				<div className='relative z-10 flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-12 md:gap-20'>
+					{/* Left: Glassmorphic Card with Headline and CTAs */}
+					<motion.div
+						className='flex-1 flex flex-col items-center md:items-start justify-center text-center md:text-left'
+						initial='hidden'
+						animate='visible'
+						variants={{
+							hidden: {},
+							visible: {
+								transition: { staggerChildren: 0.15 }
+							}
+						}}
+					>
+						{/* Glassmorphic Card */}
 						<motion.div
+							className='w-full max-w-2xl bg-white/40 dark:bg-slate-900/60 backdrop-blur-2xl rounded-3xl border border-white/30 dark:border-slate-800/40 shadow-2xl px-6 sm:px-10 py-12 mb-8 md:mb-0 mx-auto flex flex-col items-center md:items-start relative'
+							style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.18)' }}
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8 }}
-							className="mb-4"
 						>
-							<span className="inline-block px-4 py-1 bg-blue-900/80 text-blue-200 rounded-full text-xs font-semibold tracking-wider shadow-lg animate-pulse">
-								Available for Projects
-							</span>
+							{/* Badge */}
+							<motion.span
+								className='inline-block px-4 py-1 bg-blue-900/80 text-blue-200 rounded-full text-xs font-semibold tracking-wider shadow-lg animate-pulse mb-4'
+								initial={{ opacity: 0, y: 20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6 }}
+							>
+								available for projects
+							</motion.span>
+							{/* Animated Gradient Headline */}
+							<motion.h1
+								className='text-4xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-8 leading-tight drop-shadow-xl'
+								initial={{ opacity: 0, y: 40 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.9, delay: 0.1 }}
+							>
+								Empowering <span className='bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent animate-gradient-x'>Leaders</span> &<br />
+								<span className='bg-gradient-to-r from-purple-500 via-blue-500 to-purple-400 bg-clip-text text-transparent animate-gradient-x'>Entrepreneurs</span> to Succeed
+							</motion.h1>
+							{/* Subtitle */}
+							<motion.p
+								className='text-xl text-gray-700 dark:text-blue-100 mb-10 max-w-2xl'
+								initial={{ opacity: 0, y: 40 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.9, delay: 0.2 }}
+							>
+								Director – Reliance New Energy Limited, Vice President of Gujarat Cricket Association, and passionate advocate for youth empowerment and sports development.
+							</motion.p>
+							{/* Action Buttons */}
+							<motion.div
+								className='flex flex-wrap gap-6 mb-10 justify-center md:justify-start'
+								initial={{ opacity: 0, y: 40 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.9, delay: 0.3 }}
+							>
+								<Link to='/connect' className='px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-xl hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 text-lg flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-400'>
+									Start Your Project
+								</Link>
+								<Link to='/initiatives' className='px-8 py-4 border-2 border-blue-400 text-blue-600 dark:text-blue-200 font-semibold rounded-xl shadow-xl hover:bg-blue-800/40 hover:scale-105 active:scale-95 transition-all duration-300 text-lg flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-blue-400'>
+									View Initiatives
+								</Link>
+							</motion.div>
+							{/* Social Proof/Links */}
+							<motion.div
+								className='flex flex-wrap gap-4 mb-8 justify-center md:justify-start'
+								initial={{ opacity: 0, y: 40 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.9, delay: 0.4 }}
+							>
+								<a href='#' className='px-5 py-2 bg-blue-900/70 text-blue-200 rounded-lg text-base font-medium hover:bg-blue-800/90 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400'>LinkedIn</a>
+								<a href='#' className='px-5 py-2 bg-blue-900/70 text-blue-200 rounded-lg text-base font-medium hover:bg-blue-800/90 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400'>Book a Free UX Audit</a>
+								<a href='#' className='px-5 py-2 bg-yellow-700/80 text-yellow-200 rounded-lg text-base font-medium hover:bg-yellow-800/90 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400'>Awwwards</a>
+							</motion.div>
+							{/* Client Avatars/Trust Bar */}
+							<motion.div
+								className='flex items-center gap-2 bg-black/60 rounded-xl px-6 py-3 shadow-lg text-white text-base font-medium backdrop-blur-md'
+								initial={{ opacity: 0, y: 40 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.9, delay: 0.5 }}
+							>
+								<span className='flex -space-x-2'>
+									<img src={profileImg} alt='Dhanraj Nathwani' className='w-10 h-10 rounded-full border-2 border-white shadow-lg ring-2 ring-blue-400/60 animate-float' />
+									<img src={profileImg} alt='Dhanraj Nathwani' className='w-10 h-10 rounded-full border-2 border-white shadow-lg ring-2 ring-purple-400/60 animate-float-slower' />
+									<img src={profileImg} alt='Dhanraj Nathwani' className='w-10 h-10 rounded-full border-2 border-white shadow-lg ring-2 ring-blue-400/60 animate-float' />
+								</span>
+								<span className='ml-2'>★★★★★ Trusted by 40+ clients</span>
+							</motion.div>
 						</motion.div>
-						<motion.h1
-							initial={{ opacity: 0, y: 40 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.9, delay: 0.1 }}
-							className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-tight drop-shadow-xl"
-						>
-							Empowering <span className="text-blue-400">Leaders</span> &<br />
-							<span className="text-blue-400">Entrepreneurs</span> to Succeed
-						</motion.h1>
-						<motion.p
-							initial={{ opacity: 0, y: 40 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.9, delay: 0.2 }}
-							className="text-xl text-blue-100 mb-10 max-w-2xl"
-						>
-							Director – Reliance New Energy Limited, Vice President of Gujarat Cricket Association, and passionate advocate for youth empowerment and sports development.
-						</motion.p>
-						<motion.div
-							initial={{ opacity: 0, y: 40 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.9, delay: 0.3 }}
-							className="flex flex-wrap gap-6 mb-10 justify-center md:justify-start"
-						>
-							<Link to="/connect" className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl shadow-xl hover:bg-blue-700 transition-all duration-300 text-lg flex items-center gap-2">
-								Start Your Project
-							</Link>
-							<Link to="/initiatives" className="px-8 py-4 border-2 border-blue-400 text-blue-200 font-semibold rounded-xl shadow-xl hover:bg-blue-800/40 transition-all duration-300 text-lg flex items-center gap-2">
-								View Initiatives
-							</Link>
-						</motion.div>
-						<motion.div
-							initial={{ opacity: 0, y: 40 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.9, delay: 0.4 }}
-							className="flex flex-wrap gap-4 mb-8 justify-center md:justify-start"
-						>
-							<a href="#" className="px-5 py-2 bg-blue-900/70 text-blue-200 rounded-lg text-base font-medium hover:bg-blue-800/90 transition-all duration-200">LinkedIn</a>
-							<a href="#" className="px-5 py-2 bg-blue-900/70 text-blue-200 rounded-lg text-base font-medium hover:bg-blue-800/90 transition-all duration-200">Book a Free UX Audit</a>
-							<a href="#" className="px-5 py-2 bg-yellow-700/80 text-yellow-200 rounded-lg text-base font-medium hover:bg-yellow-800/90 transition-all duration-200">Awwwards</a>
-						</motion.div>
-						<motion.div
-							initial={{ opacity: 0, y: 40 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.9, delay: 0.5 }}
-							className="flex items-center gap-2 bg-black/60 rounded-xl px-6 py-3 shadow-lg text-white text-base font-medium"
-						>
-							<span className="flex -space-x-2">
-								<img src={profileImg} alt="Dhanraj Nathwani" className="w-10 h-10 rounded-full border-2 border-white" />
-								<img src={profileImg} alt="Dhanraj Nathwani" className="w-10 h-10 rounded-full border-2 border-white" />
-								<img src={profileImg} alt="Dhanraj Nathwani" className="w-10 h-10 rounded-full border-2 border-white" />
-							</span>
-							<span className="ml-2">★★★★★ Trusted by 40+ clients</span>
-						</motion.div>
-					</div>
+					</motion.div>
 
-					{/* Right: Profile Image */}
-					<div className="flex-1 flex items-center justify-center w-full mt-12 md:mt-0">
-						<motion.img
+					{/* Right: Profile Image with Glow/Overlap and Floating Brand Icons */}
+					<motion.div
+						className='flex-1 flex items-center justify-center w-full mt-12 md:mt-0 relative'
+						initial={{ opacity: 0, x: 60 }}
+						animate={{ opacity: 1, x: 0 }}
+						transition={{ duration: 1, delay: 0.2 }}
+					>
+						<div className='absolute -inset-4 md:-inset-8 rounded-full bg-gradient-to-br from-blue-400 via-purple-400 to-blue-600 blur-2xl opacity-60 animate-pulse pointer-events-none'></div>
+						<img
 							src={profileImg}
-							alt="Dhanraj Nathwani profile"
-							className="w-72 h-72 md:w-[400px] md:h-[400px] rounded-full object-cover border-4 border-blue-400 shadow-2xl bg-gradient-to-br from-blue-700/40 to-purple-700/40"
-							initial={{ opacity: 0, scale: 0.8 }}
-							animate={{ opacity: 1, scale: 1 }}
-							transition={{ duration: 1, delay: 0.2 }}
+							alt='Dhanraj Nathwani profile'
+							className='w-64 sm:w-80 md:w-[340px] lg:w-[400px] h-auto object-contain border-4 border-white dark:border-slate-800 shadow-2xl relative z-10 animate-float-slower bg-white/80 dark:bg-slate-900/80 rounded-2xl'
 						/>
-					</div>
+						{/* Floating Brand Icons (for extra modern touch) */}
+						<motion.div
+							className='absolute -top-8 -right-8 flex flex-col gap-4 items-center'
+							initial={{ opacity: 0, y: -20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 1, delay: 0.6 }}
+						>
+							<span className='bg-white/80 dark:bg-slate-900/80 p-2 rounded-full shadow-lg border border-blue-200 dark:border-blue-900 animate-float'>
+								<svg width='28' height='28' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='#6366f1'/></svg>
+							</span>
+							<span className='bg-white/80 dark:bg-slate-900/80 p-2 rounded-full shadow-lg border border-purple-200 dark:border-purple-900 animate-float-slower'>
+								<svg width='28' height='28' fill='none' viewBox='0 0 24 24'><rect x='4' y='4' width='16' height='16' rx='8' fill='#7c3aed'/></svg>
+							</span>
+						</motion.div>
+					</motion.div>
 				</div>
 			</section>
 

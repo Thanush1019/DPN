@@ -90,9 +90,35 @@ const Connect = () => {
 
 	return (
 		<div className="min-h-screen pt-20">
-			{/* Hero Section */}
-			<section className="py-20 bg-gradient-to-br from-violet-100 via-violet-200 to-white dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			{/* Hero Section with animated background */}
+			<section className="relative py-20 bg-gradient-to-br from-violet-100 via-violet-200 to-white dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 overflow-hidden">
+				{/* Animated SVG/Blob Backgrounds */}
+				<motion.div
+					className="absolute inset-0 z-0 pointer-events-none"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 1 }}
+				>
+					<svg className="absolute -top-32 -left-32 w-96 h-96 opacity-30 animate-float-slow" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+						<defs>
+							<radialGradient id="connectGrad1" cx="50%" cy="50%" r="50%">
+								<stop offset="0%" stopColor="#a5b4fc" stopOpacity="0.7" />
+								<stop offset="100%" stopColor="#7c3aed" stopOpacity="0.2" />
+							</radialGradient>
+						</defs>
+						<circle cx="100" cy="100" r="100" fill="url(#connectGrad1)" />
+					</svg>
+					<svg className="absolute bottom-0 right-0 w-80 h-80 opacity-20 animate-float-slower" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+						<defs>
+							<radialGradient id="connectGrad2" cx="50%" cy="50%" r="50%">
+								<stop offset="0%" stopColor="#6366f1" stopOpacity="0.5" />
+								<stop offset="100%" stopColor="#a5b4fc" stopOpacity="0.1" />
+							</radialGradient>
+						</defs>
+						<ellipse cx="100" cy="100" rx="100" ry="80" fill="url(#connectGrad2)" />
+					</svg>
+				</motion.div>
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +127,7 @@ const Connect = () => {
 					>
 						<h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
 							Let's{' '}
-							<span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+							<span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient-x">
 								Connect
 							</span>
 						</h1>
@@ -113,7 +139,7 @@ const Connect = () => {
 				</div>
 			</section>
 
-			{/* Contact Information Section */}
+			{/* Contact Information Section with glassmorphism and animation */}
 			<section className="py-20 bg-white dark:bg-slate-800">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
@@ -138,9 +164,9 @@ const Connect = () => {
 								initial={{ opacity: 0, y: 30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: index * 0.1 }}
-								className="text-center group"
+								className="text-center group bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl border border-white/30 dark:border-slate-800/40 shadow-xl p-8 hover:scale-105 hover:shadow-2xl transition-all duration-300"
 							>
-								<div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+								<div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
 									<info.icon className="w-8 h-8" />
 								</div>
 								<h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
@@ -158,7 +184,7 @@ const Connect = () => {
 				</div>
 			</section>
 
-			{/* Contact Form Section */}
+			{/* Contact Form Section with animation */}
 			<section
 				ref={connectRef}
 				className="py-20 bg-gray-50 dark:bg-slate-900"
@@ -183,13 +209,13 @@ const Connect = () => {
 						initial={{ opacity: 0, y: 30 }}
 						animate={connectInView ? { opacity: 1, y: 0 } : {}}
 						transition={{ duration: 0.6, delay: 0.2 }}
-						className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8"
+						className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8"
 					>
 						{submitSuccess && (
 							<motion.div
 								initial={{ opacity: 0, y: -20 }}
 								animate={{ opacity: 1, y: 0 }}
-								className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg"
+								className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg shadow"
 							>
 								Thank you for your message! I'll get back to you soon.
 							</motion.div>
