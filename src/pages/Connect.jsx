@@ -91,7 +91,7 @@ const Connect = () => {
 	return (
 		<div className="min-h-screen pt-20">
 			{/* Hero Section with animated background */}
-			<section className="relative py-20 bg-gradient-to-br from-violet-100 via-violet-200 to-white dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 overflow-hidden">
+			<section className="relative py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-white overflow-hidden">
 				{/* Animated SVG/Blob Backgrounds */}
 				<motion.div
 					className="absolute inset-0 z-0 pointer-events-none"
@@ -125,13 +125,13 @@ const Connect = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center"
 					>
-						<h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+						<h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
 							Let's{' '}
 							<span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient-x">
 								Connect
 							</span>
 						</h1>
-						<p className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+						<p className="text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
 							Ready to collaborate, discuss opportunities, or simply share insights? 
 							I'm always open to meaningful conversations about leadership, sports, and community development.
 						</p>
@@ -140,7 +140,7 @@ const Connect = () => {
 			</section>
 
 			{/* Contact Information Section with glassmorphism and animation */}
-			<section className="py-20 bg-white dark:bg-slate-800">
+			<section className="py-20 bg-white">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
@@ -148,10 +148,10 @@ const Connect = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
 							Get in Touch
 						</h2>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 							Multiple ways to reach out and start a conversation about collaboration, 
 							mentorship, or sports development initiatives.
 						</p>
@@ -164,18 +164,18 @@ const Connect = () => {
 								initial={{ opacity: 0, y: 30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: index * 0.1 }}
-								className="text-center group bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl rounded-2xl border border-white/30 dark:border-slate-800/40 shadow-xl p-8 hover:scale-105 hover:shadow-2xl transition-all duration-300"
+								className="text-center group bg-white/60 backdrop-blur-xl rounded-2xl border border-white/30 shadow-xl p-8 hover:scale-105 hover:shadow-2xl transition-all duration-300"
 							>
 								<div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
 									<info.icon className="w-8 h-8" />
 								</div>
-								<h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+								<h3 className="text-xl font-semibold text-gray-900 mb-2">
 									{info.title}
 								</h3>
-								<p className="text-lg font-medium text-purple-600 dark:text-purple-400 mb-2">
+								<p className="text-lg font-medium text-purple-600 mb-2">
 									{info.value}
 								</p>
-								<p className="text-gray-600 dark:text-gray-300">
+								<p className="text-gray-600">
 									{info.description}
 								</p>
 							</motion.div>
@@ -187,7 +187,7 @@ const Connect = () => {
 			{/* Contact Form Section with animation */}
 			<section
 				ref={connectRef}
-				className="py-20 bg-gray-50 dark:bg-slate-900"
+				className="py-20 bg-gray-50"
 			>
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
@@ -196,10 +196,10 @@ const Connect = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
 							Send a Message
 						</h2>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 							Have a specific inquiry or want to discuss collaboration opportunities? 
 							Fill out the form below and I'll get back to you promptly.
 						</p>
@@ -209,13 +209,13 @@ const Connect = () => {
 						initial={{ opacity: 0, y: 30 }}
 						animate={connectInView ? { opacity: 1, y: 0 } : {}}
 						transition={{ duration: 0.6, delay: 0.2 }}
-						className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8"
+						className="bg-white rounded-2xl shadow-2xl p-8"
 					>
 						{submitSuccess && (
 							<motion.div
 								initial={{ opacity: 0, y: -20 }}
 								animate={{ opacity: 1, y: 0 }}
-								className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg shadow"
+								className="mb-6 p-4 bg-green-100 text-green-800 rounded-lg shadow"
 							>
 								Thank you for your message! I'll get back to you soon.
 							</motion.div>
@@ -224,7 +224,7 @@ const Connect = () => {
 						<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 								<div>
-									<label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+									<label className="block text-sm font-medium text-gray-700 mb-2">
 										Name *
 									</label>
 									<div className="relative">
@@ -232,19 +232,19 @@ const Connect = () => {
 										<input
 											type="text"
 											{...register('name')}
-											className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+											className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
 											placeholder="Your full name"
 										/>
 									</div>
 									{errors.name && (
-										<p className="mt-1 text-sm text-red-600 dark:text-red-400">
+										<p className="mt-1 text-sm text-red-600">
 											{errors.name.message}
 										</p>
 									)}
 								</div>
 
 								<div>
-									<label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+									<label className="block text-sm font-medium text-gray-700 mb-2">
 										Email *
 									</label>
 									<div className="relative">
@@ -252,12 +252,12 @@ const Connect = () => {
 										<input
 											type="email"
 											{...register('email')}
-											className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+											className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
 											placeholder="your.email@example.com"
 										/>
 									</div>
 									{errors.email && (
-										<p className="mt-1 text-sm text-red-600 dark:text-red-400">
+										<p className="mt-1 text-sm text-red-600">
 											{errors.email.message}
 										</p>
 									)}
@@ -265,7 +265,7 @@ const Connect = () => {
 							</div>
 
 							<div>
-								<label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+								<label className="block text-sm font-medium text-gray-700 mb-2">
 									Organization
 								</label>
 								<div className="relative">
@@ -273,31 +273,31 @@ const Connect = () => {
 									<input
 										type="text"
 										{...register('organization')}
-										className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+										className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
 										placeholder="Your organization (optional)"
 									/>
 								</div>
 							</div>
 
 							<div>
-								<label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+								<label className="block text-sm font-medium text-gray-700 mb-2">
 									Subject *
 								</label>
 								<input
 									type="text"
 									{...register('subject')}
-									className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+									className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
 									placeholder="What would you like to discuss?"
 								/>
 								{errors.subject && (
-									<p className="mt-1 text-sm text-red-600 dark:text-red-400">
+									<p className="mt-1 text-sm text-red-600">
 										{errors.subject.message}
 									</p>
 								)}
 							</div>
 
 							<div>
-								<label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+								<label className="block text-sm font-medium text-gray-700 mb-2">
 									Message *
 								</label>
 								<div className="relative">
@@ -305,12 +305,12 @@ const Connect = () => {
 									<textarea
 										{...register('message')}
 										rows={6}
-										className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+										className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
 										placeholder="Tell me more about your inquiry or collaboration idea..."
 									/>
 								</div>
 								{errors.message && (
-									<p className="mt-1 text-sm text-red-600 dark:text-red-400">
+									<p className="mt-1 text-sm text-red-600">
 										{errors.message.message}
 									</p>
 								)}
@@ -341,7 +341,7 @@ const Connect = () => {
 			</section>
 
 			{/* Social Media Section */}
-			<section className="py-20 bg-white dark:bg-slate-800">
+			<section className="py-20 bg-white">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
@@ -349,10 +349,10 @@ const Connect = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
 							Follow & Connect
 						</h2>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 							Stay updated with the latest insights, initiatives, and thoughts on leadership 
 							and sports development through social media.
 						</p>
@@ -365,18 +365,18 @@ const Connect = () => {
 								initial={{ opacity: 0, y: 30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: index * 0.1 }}
-								className="bg-gray-50 dark:bg-slate-700 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2"
+								className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2"
 							>
 								<div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white">
 									<social.icon className="w-8 h-8" />
 								</div>
-								<h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+								<h3 className="text-xl font-semibold text-gray-900 mb-2">
 									{social.name}
 								</h3>
-								<p className="text-purple-600 dark:text-purple-400 font-medium mb-2">
+								<p className="text-purple-600 font-medium mb-2">
 									{social.handle}
 								</p>
-								<p className="text-gray-600 dark:text-gray-300 mb-4">
+								<p className="text-gray-600 mb-4">
 									{social.followers} followers
 								</p>
 								<a

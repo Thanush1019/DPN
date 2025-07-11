@@ -36,9 +36,9 @@ const aboutText = `Dhanraj Parimal Nathwani\n\nPerseverance, for me, is the foun
 
 function About() {
 	return (
-		<div className="min-h-screen pt-20 bg-gradient-to-br from-violet-900 via-blue-900 to-purple-900">
+		<div className="min-h-screen pt-20 bg-gradient-to-br from-blue-50 via-purple-50 to-white">
 			{/* Hero Section */}
-			<section className="py-20 bg-gradient-to-br from-violet-100 via-violet-200 to-white dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
+			<section className="py-20 bg-gradient-to-br from-blue-100 via-purple-100 to-white">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12 md:gap-20">
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
@@ -46,11 +46,11 @@ function About() {
 						transition={{ duration: 0.8 }}
 						className="flex-1 text-center md:text-left"
 					>
-						<h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+						<h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
 							About <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Dhanraj Parimal Nathwani</span>
 						</h1>
-						<h2 className="text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-blue-200 mb-4">Business Leader <span className="mx-2">|</span> Visionary <span className="mx-2">|</span> Sports Administrator</h2>
-						<p className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+						<h2 className="text-2xl lg:text-3xl font-semibold text-gray-700 mb-4">Business Leader <span className="mx-2">|</span> Visionary <span className="mx-2">|</span> Sports Administrator</h2>
+						<p className="text-xl lg:text-2xl text-gray-700 max-w-2xl mx-auto md:mx-0 leading-relaxed">
 							"Elevated for the next generation. Blue horizons, bold ambitions, bright spirit."
 						</p>
 					</motion.div>
@@ -84,9 +84,9 @@ function About() {
 						viewport={{ once: true }}
 						transition={{ duration: 0.8 }}
 					>
-						<h3 className="text-3xl font-bold mb-4 text-violet-700 dark:text-violet-300">About Dhanraj Parimal Nathwani</h3>
+						<h3 className="text-3xl font-bold mb-4 text-violet-700">About Dhanraj Parimal Nathwani</h3>
 						<div className="w-16 h-1 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 rounded-full mb-6 animate-pulse" />
-						<p className="mb-6 whitespace-pre-line leading-relaxed text-gray-800 dark:text-gray-100 text-lg font-medium">{aboutText}</p>
+						<p className="mb-6 whitespace-pre-line leading-relaxed text-gray-800 text-lg font-medium">{aboutText}</p>
 					</motion.div>
 				</div>
 			</section>
@@ -100,8 +100,8 @@ function About() {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h3 className="text-3xl lg:text-4xl font-bold text-violet-700 dark:text-violet-300 mb-4">Interests</h3>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						<h3 className="text-3xl lg:text-4xl font-bold text-violet-700 mb-4">Interests</h3>
+						<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 							A glimpse into my passions and pursuits beyond business and leadership.
 						</p>
 					</motion.div>
@@ -147,9 +147,9 @@ function About() {
 							>
 								<img src={interest.img} alt={interest.label} className="w-full md:w-1/2 h-64 md:h-80 object-cover rounded-2xl shadow-xl" />
 								<div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-									<h4 className="text-2xl md:text-3xl font-bold mb-4 text-violet-700 dark:text-violet-300">{interest.label}</h4>
+									<h4 className="text-2xl md:text-3xl font-bold mb-4 text-violet-700">{interest.label}</h4>
 									<div className="w-16 h-1 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 rounded-full mb-6 animate-pulse" />
-									<p className="text-gray-700 dark:text-gray-200 text-lg leading-relaxed font-medium mb-2">{interest.desc}</p>
+									<p className="text-gray-700 text-lg leading-relaxed font-medium mb-2">{interest.desc}</p>
 								</div>
 							</motion.section>
 						))}
@@ -166,8 +166,8 @@ function About() {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h3 className="text-3xl lg:text-4xl font-bold text-violet-700 dark:text-violet-300 mb-4">Organizations & Initiatives</h3>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						<h3 className="text-3xl lg:text-4xl font-bold text-violet-700 mb-4">Organizations & Initiatives</h3>
+						<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 							A portfolio of organizations and initiatives I am proud to be part of.
 						</p>
 					</motion.div>
@@ -183,25 +183,14 @@ function About() {
 							>
 								<img src={org.img} alt={org.title} className="w-full md:w-56 h-48 md:h-56 object-cover rounded-xl" />
 								<div className="flex-1 p-6 flex flex-col items-center md:items-start text-center md:text-left">
-									<h4 className="text-xl md:text-2xl font-bold mb-2 text-violet-700 dark:text-violet-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">{org.title}</h4>
-									<p className="text-gray-700 dark:text-gray-200 text-base leading-relaxed mb-2">{org.desc}</p>
+									<h4 className="text-xl md:text-2xl font-bold mb-2 text-violet-700 group-hover:text-purple-600 transition-colors duration-300">{org.title}</h4>
+									<p className="text-gray-700 text-base leading-relaxed mb-2">{org.desc}</p>
 								</div>
 							</motion.div>
 						))}
 					</div>
 				</div>
 			</section>
-
-			{/* Footer */}
-			<footer className="bg-gradient-to-br from-violet-900 via-blue-900 to-purple-900 text-white py-12 mt-16 rounded-t-3xl shadow-2xl border-t-2 border-violet-400/30">
-				<div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-4">
-					<img src={footerLogo} alt="Footer Logo" className="w-32 mb-4 md:mb-0" />
-					<div className="text-center md:text-right">
-						<p className="text-lg font-semibold mb-2">Feel free to connect for collaborations, mentorship, or to know more about my journey.</p>
-						<p className="text-blue-200 text-sm">© {new Date().getFullYear()} Dhanraj Nathwani. All rights reserved.</p>
-    </div>
-				</div>
-			</footer>
   </div>
 )
 }

@@ -1,13 +1,11 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon } from 'lucide-react'
-import ThemeContext from '../context/ThemeContext'
+import { Menu, X } from 'lucide-react'
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [isScrolled, setIsScrolled] = useState(false)
-	const { theme, toggleTheme } = useContext(ThemeContext)
 	const location = useLocation()
 
 	const navItems = [
@@ -41,7 +39,7 @@ const Navbar = () => {
 		>
 			<div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
 				<div className="flex items-center justify-between h-16">
-					<div className="w-full flex items-center justify-between bg-white/10 dark:bg-slate-900/40 backdrop-blur-xl rounded-full border border-white/20 dark:border-slate-800/40 shadow-2xl px-10 py-2 pointer-events-auto min-h-[64px]">
+					<div className="w-full flex items-center justify-between bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-2xl px-10 py-2 pointer-events-auto min-h-[64px]">
 						{/* Logo */}
 						<Link to="/" className="flex items-center space-x-2 mr-8 sm:mr-10 lg:mr-14">
 							<motion.div
@@ -60,10 +58,8 @@ const Navbar = () => {
 									to={item.path}
 									className={`relative px-4 py-2 text-base font-medium transition-colors duration-200 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400/40 ${
 										location.pathname === item.path
-											? 'text-blue-600 dark:text-blue-400 bg-white/30 dark:bg-slate-800/30'
-											: theme === 'dark'
-												? 'text-white hover:text-blue-400'
-												: 'text-gray-900 hover:text-blue-600'
+											? 'text-blue-600 bg-white/30'
+											: 'text-gray-900 hover:text-blue-600'
 									}`}
 								>
 									<span>{item.name}</span>
@@ -76,18 +72,6 @@ const Navbar = () => {
 									)}
 								</Link>
 							))}
-							<motion.button
-								whileHover={{ scale: 1.1 }}
-								whileTap={{ scale: 0.9 }}
-								onClick={toggleTheme}
-								className="ml-4 p-2 rounded-full border-2 border-blue-400/40 bg-white/30 dark:bg-slate-800/30 hover:bg-blue-100 dark:hover:bg-blue-800 transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
-							>
-								{theme === 'dark' ? (
-									<Sun className="w-5 h-5 text-yellow-500" />
-								) : (
-									<Moon className="w-5 h-5 text-gray-700" />
-								)}
-							</motion.button>
 						</div>
 
 						{/* Mobile Menu Button */}
@@ -96,7 +80,7 @@ const Navbar = () => {
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 								onClick={() => setIsOpen(!isOpen)}
-								className="p-2 rounded-md text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+								className="p-2 rounded-md text-gray-900 hover:bg-gray-100 transition-colors duration-200"
 							>
 								{isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
 							</motion.button>
@@ -113,12 +97,12 @@ const Navbar = () => {
 						animate={{ x: 0 }}
 						exit={{ x: '100%' }}
 						transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-						className="fixed top-4 right-2 w-[95vw] max-w-sm h-[90vh] bg-white/20 dark:bg-slate-900/80 backdrop-blur-2xl shadow-2xl z-50 flex flex-col p-8 gap-7 rounded-3xl border border-white/30 dark:border-slate-800/40 pointer-events-auto"
+						className="fixed top-4 right-2 w-[95vw] max-w-sm h-[90vh] bg-white/20 backdrop-blur-2xl shadow-2xl z-50 flex flex-col p-8 gap-7 rounded-3xl border border-white/30 pointer-events-auto"
 					>
 						<div className="flex justify-between items-center mb-8">
 							<div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">DPN</div>
-							<button onClick={() => setIsOpen(false)} className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
-								<X className="w-7 h-7 text-gray-900 dark:text-white" />
+							<button onClick={() => setIsOpen(false)} className="p-2 rounded-full hover:bg-gray-100">
+								<X className="w-7 h-7 text-gray-900" />
 							</button>
 						</div>
 						{navItems.map((item) => (
@@ -128,25 +112,13 @@ const Navbar = () => {
 								onClick={() => setIsOpen(false)}
 								className={`block py-3 px-2 text-lg font-medium rounded-full transition-colors duration-200 mb-1 ${
 									location.pathname === item.path
-										? 'text-blue-600 dark:text-blue-400 bg-white/30 dark:bg-blue-900'
-										: 'text-gray-900 dark:text-white hover:bg-blue-100 dark:hover:bg-blue-800'
+										? 'text-blue-600 bg-white/30'
+										: 'text-gray-900 hover:bg-blue-100'
 								}`}
 							>
 								{item.name}
 							</Link>
 						))}
-						<motion.button
-							whileHover={{ scale: 1.1 }}
-							whileTap={{ scale: 0.9 }}
-							onClick={toggleTheme}
-							className="mt-8 p-3 rounded-full border-2 border-blue-400/40 bg-white/30 dark:bg-slate-800/30 hover:bg-blue-100 dark:hover:bg-blue-800 transition-colors duration-200 mx-auto min-w-[44px] min-h-[44px] flex items-center justify-center"
-						>
-							{theme === 'dark' ? (
-								<Sun className="w-6 h-6 text-yellow-500" />
-							) : (
-								<Moon className="w-6 h-6 text-gray-700" />
-							)}
-						</motion.button>
 					</motion.div>
 				)}
 			</AnimatePresence>

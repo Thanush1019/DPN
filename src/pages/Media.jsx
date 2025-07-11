@@ -19,7 +19,7 @@ const Media = () => {
 			category: 'Cricket Administration',
 			date: '2024-01-15',
 			source: 'Cricket Today',
-			image: '/api/placeholder/400/300',
+			image: '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_6_DPN-Social-Media-May-2022-35-400x220.png',
 			url: '#',
 			featured: true,
 		},
@@ -31,7 +31,7 @@ const Media = () => {
 			category: 'Youth Development',
 			date: '2024-01-10',
 			source: 'Sports Central',
-			image: '/api/placeholder/400/500',
+			image: '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_7_DPN-Social-Media-March-2022-7-3-400x220.png',
 			url: '#',
 			featured: false,
 		},
@@ -43,7 +43,7 @@ const Media = () => {
 			category: 'Leadership',
 			date: '2024-01-05',
 			source: 'Leadership Forum',
-			image: '/api/placeholder/400/350',
+			image: '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_8_DPN-Social-Media-November-2021-20-400x220.png',
 			url: '#',
 			featured: false,
 		},
@@ -55,7 +55,7 @@ const Media = () => {
 			category: 'Infrastructure',
 			date: '2023-12-20',
 			source: 'Infrastructure Weekly',
-			image: '/api/placeholder/400/400',
+			image: '/Life – Dhanraj Nathwani/imgi_15_Gujarat-Ecological-Education-and-Research-GEER-Foundation-1.jpg',
 			url: '#',
 			featured: true,
 		},
@@ -67,7 +67,7 @@ const Media = () => {
 			category: 'Women Cricket',
 			date: '2023-12-15',
 			source: 'Women in Sports',
-			image: '/api/placeholder/400/300',
+			image: '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_6_DPN-Social-Media-May-2022-35-400x220.png',
 			url: '#',
 			featured: false,
 		},
@@ -79,7 +79,7 @@ const Media = () => {
 			category: 'Digital Innovation',
 			date: '2023-12-10',
 			source: 'Tech Sports Podcast',
-			image: '/api/placeholder/400/450',
+			image: '/Dhanraj Nathwani – Director – Reliance New Energy Limited/imgi_8_DPN-Social-Media-November-2021-20-400x220.png',
 			url: '#',
 			featured: false,
 		},
@@ -91,7 +91,7 @@ const Media = () => {
 			category: 'Social Impact',
 			date: '2023-12-05',
 			source: 'Community Focus',
-			image: '/api/placeholder/400/500',
+			image: '/Life – Dhanraj Nathwani/imgi_41_Gujarat-Ecological-Education-and-Research-GEER-Foundation-1-300x150.jpg',
 			url: '#',
 			featured: true,
 		},
@@ -103,7 +103,7 @@ const Media = () => {
 			category: 'Leadership',
 			date: '2023-11-30',
 			source: 'Sports Management Today',
-			image: '/api/placeholder/400/350',
+			image: '', // No image available
 			url: '#',
 			featured: false,
 		},
@@ -142,7 +142,7 @@ const Media = () => {
 	return (
 		<div className="min-h-screen pt-20">
 			{/* Hero Section */}
-			<section className="py-20 bg-gradient-to-br from-violet-100 via-violet-200 to-white dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
+			<section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-white">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
@@ -150,13 +150,13 @@ const Media = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center"
 					>
-						<h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+						<h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
 							Media &{' '}
 							<span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
 								Press
 							</span>
 						</h1>
-						<p className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+						<p className="text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
 							Press coverage, interviews, and media appearances showcasing leadership, 
 							initiatives, and impact in cricket administration and community development.
 						</p>
@@ -165,7 +165,7 @@ const Media = () => {
 			</section>
 
 			{/* Featured Media Section */}
-			<section className="py-20 bg-white dark:bg-slate-800">
+			<section className="py-20 bg-white/90">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
@@ -173,10 +173,10 @@ const Media = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
 							Featured Coverage
 						</h2>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 							Highlighted media appearances and press coverage that showcase key initiatives and leadership impact.
 						</p>
 					</motion.div>
@@ -188,38 +188,39 @@ const Media = () => {
 								initial={{ opacity: 0, y: 30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: index * 0.1 }}
-								className="bg-gray-50 dark:bg-slate-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+								className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
 							>
-								{/* Image Placeholder */}
-								<div className="h-64 bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center">
-									<div className="text-white text-6xl font-bold">📰</div>
-								</div>
+								{item.image && !item.image.includes('/api/placeholder') && (
+									<div className="h-64 w-full flex items-center justify-center overflow-hidden bg-gray-100">
+										<img src={item.image} alt={item.title} className="object-cover w-full h-full" />
+									</div>
+								)}
 								
 								<div className="p-6">
 									<div className="flex items-center justify-between mb-3">
-										<span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs font-medium rounded-full">
+										<span className="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">
 											Featured
 										</span>
-										<div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+										<div className="flex items-center text-sm text-gray-500">
 											<Calendar className="w-4 h-4 mr-1" />
 											{formatDate(item.date)}
 										</div>
 									</div>
 									
-									<h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+									<h3 className="text-xl font-bold text-gray-900 mb-3">
 										{item.title}
 									</h3>
-									<p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+									<p className="text-gray-600 mb-4 leading-relaxed">
 										{item.description}
 									</p>
 									
 									<div className="flex items-center justify-between">
-										<span className="text-sm font-medium text-purple-600 dark:text-purple-400">
+										<span className="text-sm font-medium text-purple-600">
 											{item.source}
 										</span>
 										<a
 											href={item.url}
-											className="flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-300"
+											className="flex items-center text-purple-600 hover:text-purple-700 transition-colors duration-300"
 										>
 											<span className="text-sm font-medium mr-2">Read More</span>
 											<ExternalLink className="w-4 h-4" />
@@ -235,7 +236,7 @@ const Media = () => {
 			{/* Media Grid Section */}
 			<section
 				ref={mediaRef}
-				className="py-20 bg-gray-50 dark:bg-slate-900"
+				className="py-20 bg-gray-50"
 			>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
@@ -244,10 +245,10 @@ const Media = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
 							All Media Coverage
 						</h2>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 							Comprehensive collection of press mentions, interviews, and media appearances.
 						</p>
 					</motion.div>
@@ -266,7 +267,7 @@ const Media = () => {
 								className={`px-6 py-2 rounded-full transition-all duration-300 border ${
 									selectedCategory === category
 										? 'bg-purple-600 text-white border-purple-600'
-										: 'bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-purple-600 hover:text-white hover:border-purple-600'
+										: 'bg-white text-gray-700 border-gray-200 hover:bg-purple-600 hover:text-white hover:border-purple-600'
 								}`}
 							>
 								{category}
@@ -292,44 +293,40 @@ const Media = () => {
 										initial={{ opacity: 0, y: 30 }}
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ duration: 0.6, delay: index * 0.1 }}
-										className="bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+										className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
 									>
-										{/* Image Placeholder */}
-										<div className="h-48 bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center relative overflow-hidden">
-											<div className="text-white text-4xl font-bold">📰</div>
-											{item.type.includes('Video') && (
-												<div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-													<Play className="w-12 h-12 text-white" />
-												</div>
-											)}
-										</div>
+										{item.image && !item.image.includes('/api/placeholder') && (
+											<div className="h-48 w-full flex items-center justify-center overflow-hidden bg-gray-100">
+												<img src={item.image} alt={item.title} className="object-cover w-full h-full" />
+											</div>
+										)}
 										
 										<div className="p-6">
 											<div className="flex items-center justify-between mb-3">
-												<div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+												<div className="flex items-center text-sm text-gray-500">
 													<TypeIcon className="w-4 h-4 mr-2" />
 													{item.type}
 												</div>
-												<div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+												<div className="flex items-center text-sm text-gray-500">
 													<Calendar className="w-4 h-4 mr-1" />
 													{formatDate(item.date)}
 												</div>
 											</div>
 											
-											<h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+											<h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-300">
 												{item.title}
 											</h3>
-											<p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm">
+											<p className="text-gray-600 mb-4 leading-relaxed text-sm">
 												{item.description}
 											</p>
 											
 											<div className="flex items-center justify-between">
-												<span className="text-sm font-medium text-purple-600 dark:text-purple-400">
+												<span className="text-sm font-medium text-purple-600">
 													{item.source}
 												</span>
 												<a
 													href={item.url}
-													className="flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-300"
+													className="flex items-center text-purple-600 hover:text-purple-700 transition-colors duration-300"
 												>
 													<span className="text-sm font-medium mr-2">View</span>
 													<ExternalLink className="w-4 h-4" />
@@ -345,7 +342,7 @@ const Media = () => {
 			</section>
 
 			{/* Media Stats Section */}
-			<section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600">
+			<section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}

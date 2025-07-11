@@ -108,7 +108,7 @@ const Initiatives = () => {
 	return (
 		<div className="min-h-screen pt-20">
 			{/* Hero Section */}
-			<section className="py-20 bg-gradient-to-br from-violet-100 via-violet-200 to-white dark:from-slate-900 dark:via-purple-900 dark:to-slate-900">
+			<section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-white">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
@@ -116,13 +116,13 @@ const Initiatives = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center"
 					>
-						<h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+						<h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
 							Initiatives &{' '}
 							<span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
 								Projects
 							</span>
 						</h1>
-						<p className="text-xl lg:text-2xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+						<p className="text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
 							Transforming cricket administration and community development through innovative 
 							initiatives that create lasting impact and opportunities.
 						</p>
@@ -133,7 +133,7 @@ const Initiatives = () => {
 			{/* Current Projects Section */}
 			<section
 				ref={currentRef}
-				className="py-20 bg-white dark:bg-slate-800"
+				className="py-20 bg-white/90"
 			>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
@@ -142,10 +142,10 @@ const Initiatives = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
 							Current Projects
 						</h2>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 							Active initiatives that are shaping the future of cricket administration and community development.
 						</p>
 					</motion.div>
@@ -157,27 +157,27 @@ const Initiatives = () => {
 								initial={{ opacity: 0, y: 30 }}
 								animate={currentInView ? { opacity: 1, y: 0 } : {}}
 								transition={{ duration: 0.6, delay: index * 0.1 }}
-								className="bg-gray-50 dark:bg-slate-700 p-6 rounded-xl"
+								className="bg-blue-50 p-6 rounded-xl"
 							>
 								<div className="flex justify-between items-start mb-4">
-									<h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+									<h3 className="text-xl font-semibold text-gray-900">
 										{project.title}
 									</h3>
-									<span className="text-sm text-purple-600 dark:text-purple-400 font-medium">
+									<span className="text-sm text-purple-600 font-medium">
 										{project.deadline}
 									</span>
 								</div>
-								<p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+								<p className="text-gray-600 mb-6 leading-relaxed">
 									{project.description}
 								</p>
 								
 								{/* Progress Bar */}
 								<div className="mb-4">
-									<div className="flex justify-between text-sm text-gray-600 dark:text-gray-400 mb-2">
+									<div className="flex justify-between text-sm text-gray-600 mb-2">
 										<span>Progress</span>
 										<span>{project.progress}%</span>
 									</div>
-									<div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+									<div className="w-full bg-gray-200 rounded-full h-2">
 										<motion.div
 											initial={{ width: 0 }}
 											animate={currentInView ? { width: `${project.progress}%` } : {}}
@@ -195,7 +195,7 @@ const Initiatives = () => {
 			{/* Initiatives Grid Section */}
 			<section
 				ref={initiativesRef}
-				className="py-20 bg-gray-50 dark:bg-slate-900"
+				className="py-20 bg-gray-50"
 			>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<motion.div
@@ -204,29 +204,12 @@ const Initiatives = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
 							All Initiatives
 						</h2>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 							Comprehensive portfolio of projects and programs driving positive change in cricket and community development.
 						</p>
-					</motion.div>
-
-					{/* Category Filter */}
-					<motion.div
-						initial={{ opacity: 0, y: 30 }}
-						animate={initiativesInView ? { opacity: 1, y: 0 } : {}}
-						transition={{ duration: 0.6, delay: 0.2 }}
-						className="flex flex-wrap justify-center gap-4 mb-12"
-					>
-						{categories.map((category) => (
-							<button
-								key={category}
-								className="px-6 py-2 rounded-full bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-purple-600 hover:text-white transition-all duration-300 border border-gray-200 dark:border-gray-700"
-							>
-								{category}
-							</button>
-						))}
 					</motion.div>
 
 					{/* Initiatives Grid */}
@@ -237,7 +220,7 @@ const Initiatives = () => {
 								initial={{ opacity: 0, y: 30 }}
 								animate={initiativesInView ? { opacity: 1, y: 0 } : {}}
 								transition={{ duration: 0.6, delay: index * 0.1 }}
-								className="bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+								className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
 							>
 								{/* Card Header */}
 								<div className="p-6">
@@ -245,31 +228,31 @@ const Initiatives = () => {
 										<div className="text-4xl">{initiative.icon}</div>
 										<span className={`px-3 py-1 rounded-full text-xs font-medium ${
 											initiative.status === 'Active' 
-												? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-												: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
+												? 'bg-green-100 text-green-800'
+												: 'bg-yellow-100 text-yellow-800'
 										}`}>
 											{initiative.status}
 										</span>
 									</div>
 
-									<h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+									<h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
 										{initiative.title}
 									</h3>
-									<p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+									<p className="text-gray-600 mb-4 leading-relaxed">
 										{initiative.description}
 									</p>
 
 									{/* Meta Information */}
 									<div className="space-y-2 mb-6">
-										<div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+										<div className="flex items-center text-sm text-gray-500">
 											<Calendar className="w-4 h-4 mr-2" />
 											{initiative.year}
 										</div>
-										<div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+										<div className="flex items-center text-sm text-gray-500">
 											<MapPin className="w-4 h-4 mr-2" />
 											{initiative.location}
 										</div>
-										<div className="flex items-center text-sm text-purple-600 dark:text-purple-400 font-medium">
+										<div className="flex items-center text-sm text-purple-600 font-medium">
 											<TrendingUp className="w-4 h-4 mr-2" />
 											{initiative.impact}
 										</div>
@@ -277,16 +260,9 @@ const Initiatives = () => {
 
 									{/* CTA Button */}
 									<div className="flex justify-between items-center">
-										<span className="text-sm font-medium text-purple-600 dark:text-purple-400">
+										<span className="text-sm font-medium text-purple-600">
 											{initiative.category}
 										</span>
-										<a
-											href={initiative.link}
-											className="flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-300 group"
-										>
-											<span className="text-sm font-medium mr-2">Learn More</span>
-											<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-										</a>
 									</div>
 								</div>
 							</motion.div>

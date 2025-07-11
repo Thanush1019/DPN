@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 // import Navbar from '../components/Navbar' // Removed duplicate Navbar import
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer' // Removed duplicate Footer import
 
 const galleryCategories = [
   {
@@ -95,10 +95,10 @@ function Gallery() {
   }, [modal.open])
 
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-br from-blue-100 via-blue-200 to-white dark:from-violet-900 dark:via-blue-900 dark:to-purple-900">
+    <div className="min-h-screen pt-20 bg-gradient-to-br from-blue-50 via-purple-50 to-white">
       {/* <Navbar /> */} {/* Removed duplicate Navbar usage */}
       {/* Hero Section */}
-      <section className="relative py-20 flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-blue-100 via-blue-200 to-white dark:from-violet-900 dark:via-blue-900 dark:to-purple-900">
+      <section className="relative py-20 flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-white">
         {/* Animated Floating Background Shapes */}
         <motion.div
           className="absolute -top-20 left-1/4 w-96 h-96 bg-violet-500/30 rounded-full blur-3xl z-0"
@@ -114,7 +114,7 @@ function Gallery() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl sm:text-6xl font-extrabold text-white drop-shadow-xl mb-6 z-10"
+          className="text-5xl sm:text-6xl font-extrabold text-gray-900 drop-shadow-xl mb-6 z-10"
         >
           Gallery
         </motion.h1>
@@ -122,7 +122,7 @@ function Gallery() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.1 }}
-          className="text-xl sm:text-2xl text-blue-100 max-w-2xl mx-auto z-10"
+          className="text-xl sm:text-2xl text-blue-700 max-w-2xl mx-auto z-10"
         >
           Explore moments from every facet of life—personal, professional, social, and beyond.
         </motion.p>
@@ -131,13 +131,13 @@ function Gallery() {
       {/* Gallery Sections */}
       <div className="flex flex-col gap-24 pb-24">
         {galleryCategories.map((cat, catIdx) => (
-          <section key={cat.id} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <section key={cat.id} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full bg-white/90 rounded-2xl shadow-xl p-8">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="text-3xl md:text-4xl font-extrabold mb-8 text-violet-700 dark:text-violet-300 text-left"
+              className="text-3xl md:text-4xl font-extrabold mb-8 text-violet-700 text-left"
             >
               {cat.label}
             </motion.h2>
@@ -220,7 +220,7 @@ function Gallery() {
           </motion.div>
         )}
       </AnimatePresence>
-      <Footer />
+      {/* <Footer /> */} {/* Removed duplicate Footer usage */}
     </div>
   )
 }
